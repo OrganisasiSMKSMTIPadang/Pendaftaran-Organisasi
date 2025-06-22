@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Organisasi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-header">
+            <div class="logo-wrapper">
+                <img src="logo smti.png" alt="Logo Organisasi" class="logo-image" />
+            </div>
+            <h1 class="registration-title">Pendaftaran Organisasi</h1>
+            <p class="registration-subtitle">Kami Memimpin bukan Karna Gaya, Tapi Karna Kami Bisa dan Berkarya, AYO, Latih Diri, Bentuk Karakter, Jadi Pemimpin</p>
+        </div>
+        
+        <form id="registrationForm" class="registration-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nama" class="form-label">Nama Lengkap</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" class="form-input" placeholder="Masukkan email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telepon" class="form-label">Nomor Telepon</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" id="telepon" class="form-input" placeholder="Masukkan nomor telepon" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-calendar-alt input-icon"></i>
+                        <input type="date" id="tanggal_lahir" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-map-marker-alt input-icon textarea-icon"></i>
+                        <textarea id="alamat" rows="3" class="form-textarea" placeholder="Masukkan alamat lengkap" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="organisasi" class="form-label">Pilih Organisasi</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-users input-icon"></i>
+                        <select id="organisasi" class="form-select" required>
+                            <option value="">Pilih organisasi</option>
+                            <option value="OSIS INTI">Organisasi Siswa Intra Sekolah (OSIS)</option>
+                            <option value="AGAMA">Rohani Islam (ROHIS)</option>
+                            <option value="BELA NEGARA">Pasukan Khusus (PASUS)</option>
+                            <option value="KESEHATAN">Unit Kesehatan Sekolah (UKS)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label class="form-label">Keahlian</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-text">Kepemimpinan</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-text">Komunikasi</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-text">Problem Solving</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-text">Teknologi</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="motivasi" class="form-label">Motivasi Bergabung dan Kelebihan</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lightbulb input-icon textarea-icon"></i>
+                        <textarea id="motivasi" rows="3" class="form-textarea" placeholder="Ceritakan motivasi Anda bergabung dan sampaikan kelebihan Anda" required></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-agreement">
+                <input id="setuju" type="checkbox" class="agreement-checkbox" required>
+                <label for="setuju" class="agreement-label">
+                    Saya menyetujui <a href="#" class="agreement-link">syarat dan ketentuan</a> yang berlaku
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-button">
+                Daftar Sekarang
+            </button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const btn = document.querySelector('.submit-button');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
+            btn.disabled = true;
+
+            // Simulasi pengiriman data
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Pendaftaran Berhasil!';
+                btn.classList.add('submit-success');
+                
+                setTimeout(() => {
+                    this.reset();
+                    btn.innerHTML = 'Daftar Sekarang';
+                    btn.disabled = false;
+                    btn.classList.remove('submit-success');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
