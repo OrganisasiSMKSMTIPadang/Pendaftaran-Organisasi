@@ -7,7 +7,7 @@ fetch('https://organisasismksmtipadang.github.io/Pendaftaran-Organisasi/pendafta
         nama: document.getElementById('nama').value,
         email: document.getElementById('email').value,
         telepon: document.getElementById('telepon').value,
-        tanggal lahir: document.getElementById('tanggal_lahir').value,
+        tanggal_lahir: document.getElementById('tanggal_lahir').value,
         organisasi: document.getElementById('organisasi').value,
         keahlian: document.getElementById('keahlian').value,
         motivasi: document.getElementById('motivasi').value,
