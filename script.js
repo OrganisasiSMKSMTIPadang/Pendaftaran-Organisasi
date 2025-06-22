@@ -1,4 +1,4 @@
-fetch('https://api.sheety.co/4b9a3b75d729af57d0205e4233c58625/dataPendaftaran/sheet1', {
+fetch('https://organisasismksmtipadang.github.io/api/Pendaftaran-Organisasi/', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
