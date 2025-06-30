@@ -1,4 +1,4 @@
-fetch('https://organisasismksmtipadang.github.io/api/Pendaftaran-Organisasi/', {
+fetch('https://your-server.com/api/pendaftaran', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
